@@ -44,4 +44,14 @@ public class StarshipController : MonoBehaviour
             rb.AddRelativeForce(Vector2.up * trhusterForce * Time.deltaTime);
         }
     }
+
+
+    void OnCollisionEnter(Collision otherObj)
+    {
+        if (otherObj.gameObject.tag == "Scene")
+        {
+            Destroy(gameObject, .5f);
+            print("AAAAAAAAAAaa");
+        }
+    }
 }

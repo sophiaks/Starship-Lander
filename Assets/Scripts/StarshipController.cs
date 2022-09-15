@@ -4,6 +4,8 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Globalization;
+using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 public class StarshipController : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class StarshipController : MonoBehaviour
 
     public float velocityX;
     public float velocityY;
+
+    //public GameObject starship;
     
     bool thrust = false;
 
@@ -54,14 +58,20 @@ public class StarshipController : MonoBehaviour
         }
     }
 
-    /*
-    void OnCollisionEnter(Collision otherObj)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if (otherObj.gameObject.tag == "Scene")
+        if (Math.Abs(velocityY) > 50)
         {
-            Destroy(gameObject, .5f);
-            print("AAAAAAAAAAaa");
+            Destroy(gameObject);
+            // Loads second scene (after Main Menu)
+            StartCoroutine(WaitCoroutine());
+            Application.LoadLevel(1);
         }
+
     }
-    */
+
+    IEnumerator WaitCoroutine()
+    {
+        yield return new WaitForSeconds(1);
+    }
 }

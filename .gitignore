@@ -33,6 +33,10 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
+
+# DS_Store for MAC user (Enrico Enrico...)
+.DS_Store
+
 *.suo
 *.tmp
 *.user

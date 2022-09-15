@@ -3,7 +3,10 @@ guid: 2e206660def577e42900dd8f8fe3d15b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - velocityText: {fileID: 5980479324945994859, guid: 1c35f585d144df94abd09ba530fd9ffb, type: 3}
+  - altitudeText: {fileID: 6463837527244886962, guid: 67bb4a3bcebd98b4c89b99c78b1a21fd, type: 3}
+  - PausePanel: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

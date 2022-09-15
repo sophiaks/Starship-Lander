@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Globalization;
 
 public class StarshipController : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public class StarshipController : MonoBehaviour
     [SerializeField] float trhusterForce = 5000f;
     [SerializeField] float tiltingForce = 60f;
 
+    public float velocityX;
+    public float velocityY;
+    
     bool thrust = false;
 
     Rigidbody2D rb;
@@ -35,6 +40,10 @@ public class StarshipController : MonoBehaviour
         }
 
         rb.freezeRotation = false;
+
+        
+        velocityX = rb.velocity.x;
+        velocityY = rb.velocity.y;
         
     }
 
@@ -45,7 +54,7 @@ public class StarshipController : MonoBehaviour
         }
     }
 
-
+    /*
     void OnCollisionEnter(Collision otherObj)
     {
         if (otherObj.gameObject.tag == "Scene")
@@ -54,4 +63,5 @@ public class StarshipController : MonoBehaviour
             print("AAAAAAAAAAaa");
         }
     }
+    */
 }

@@ -28,14 +28,14 @@ public class StarshipController : MonoBehaviour
     }
 
     void Start(){
-        rb.velocity = new Vector2(100, -100);
+        rb.velocity = new Vector2(500, -500);
     }
 
     // Update is called once per frame
     private void Update()
     {
 
-        float tilt = Input.GetAxis("Horizontal");
+        float tilt = -Input.GetAxis("Horizontal");
         thrust = Input.GetKey(KeyCode.Space);
 
         if(!Mathf.Approximately(tilt, 0f)){
@@ -48,6 +48,13 @@ public class StarshipController : MonoBehaviour
         
         velocityX = rb.velocity.x;
         velocityY = rb.velocity.y;
+
+        if (transform.position.x < -6100 || transform.position.x > 6100){
+            Destroy(gameObject);
+            // Loads second scene (after Main Menu)
+            StartCoroutine(WaitCoroutine());
+            Application.LoadLevel(2);
+        }
         
     }
 
@@ -58,14 +65,15 @@ public class StarshipController : MonoBehaviour
         }
     }
 
+
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (Math.Abs(velocityY) > 50)
+        if (Math.Abs(velocityY) > 10)
         {
             Destroy(gameObject);
             // Loads second scene (after Main Menu)
             StartCoroutine(WaitCoroutine());
-            Application.LoadLevel(1);
+            Application.LoadLevel(2);
         }
 
     }

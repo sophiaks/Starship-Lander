@@ -13,7 +13,7 @@ public class StarshipController : MonoBehaviour
 
     [SerializeField] float trhusterForce = 72000000f;
     [SerializeField] float tiltingForce = 80f;
-    [SerializeField] public int gas = 800;
+    [SerializeField] public int gas = 1500;
     [SerializeField] public int electricity = 10000;
 
     public float velocityX;

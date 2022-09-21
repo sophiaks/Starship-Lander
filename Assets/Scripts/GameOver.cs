@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    public void PlayGame()
+    public void PlayAgain()
     {
         Debug.Log("Start");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(1);
     }
 
-    public void QuitGame()
+    public void QuitGameAgain()
     {
         Debug.Log("Quit");
         Application.Quit();

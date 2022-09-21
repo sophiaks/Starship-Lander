@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public Text altitudeText;
     public Text targetText;
     public Text coordText;
+    public Text gasText;
+    public Text electricityText;
 
     private float velocityX = 0;
     private float velocityY = 0;
@@ -33,6 +35,8 @@ public class GameManager : MonoBehaviour
         PausePanel.gameObject.SetActive(false);
         velocityText.text = $"X: {velocityX.ToString("0")}; Y: {velocityY.ToString("0")}";
         altitudeText.text = GameObject.Find("Starship").GetComponent<StarshipController>().transform.position.y.ToString("0");
+        gasText.text = GameObject.Find("Starship").GetComponent<StarshipController>().gas.ToString("0");
+        electricityText.text = GameObject.Find("Starship").GetComponent<StarshipController>().electricity.ToString("0");
 
         LandingDock = GameObject.Find("Landing Dock");
 
@@ -65,6 +69,8 @@ public class GameManager : MonoBehaviour
         velocityText.text = "X: " + velocityX.ToString("0") + "; " + "Y: " + velocityY.ToString("0");
         coordText.text = "X: " + coordX.ToString("0") + "; " + "Y: " + coordY.ToString("0");
         altitudeText.text = GameObject.Find("Starship").GetComponent<StarshipController>().transform.position.y.ToString("0");
+        gasText.text = GameObject.Find("Starship").GetComponent<StarshipController>().gas.ToString("0");
+        electricityText.text = GameObject.Find("Starship").GetComponent<StarshipController>().electricity.ToString("0");
     }
 
     public void pause()

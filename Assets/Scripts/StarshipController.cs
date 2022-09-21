@@ -11,9 +11,10 @@ using UnityEngine.SceneManagement;
 public class StarshipController : MonoBehaviour
 {
 
-    [SerializeField] float trhusterForce = 5000f;
-    [SerializeField] float tiltingForce = 60f;
-    [SerializeField] float gas = 800;
+    [SerializeField] float trhusterForce = 72000000f;
+    [SerializeField] float tiltingForce = 80f;
+    [SerializeField] public int gas = 800;
+    [SerializeField] public int electricity = 10000;
 
     public float velocityX;
     public float velocityY;
@@ -40,9 +41,10 @@ public class StarshipController : MonoBehaviour
         float tilt = -Input.GetAxis("Horizontal");
         thrust = Input.GetKey(KeyCode.Space);
 
-        if(!Mathf.Approximately(tilt, 0f)){
+        if(!Mathf.Approximately(tilt, 0f) && electricity > 0){
             rb.freezeRotation = true;
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + (new Vector3 (0f, 0f, tilt * tiltingForce * Time.deltaTime)));
+            electricity -= 1;
         }
 
         rb.freezeRotation = false;

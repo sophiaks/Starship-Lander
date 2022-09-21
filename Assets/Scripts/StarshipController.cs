@@ -12,6 +12,7 @@ public class StarshipController : MonoBehaviour
 
     [SerializeField] float trhusterForce = 5000f;
     [SerializeField] float tiltingForce = 60f;
+    [SerializeField] float gas = 800;
 
     public float velocityX;
     public float velocityY;
@@ -60,8 +61,9 @@ public class StarshipController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (thrust){
+        if (thrust && gas > 0){
             rb.AddRelativeForce(Vector2.up * trhusterForce * Time.deltaTime);
+            gas -= 1;
         }
     }
 

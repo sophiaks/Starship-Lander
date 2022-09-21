@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using UnityEngine.SceneManagement;
 
 public class StarshipController : MonoBehaviour
 {
@@ -54,7 +55,7 @@ public class StarshipController : MonoBehaviour
             Destroy(gameObject);
             // Loads second scene (after Main Menu)
             StartCoroutine(WaitCoroutine());
-            Application.LoadLevel(2);
+            SceneManager.LoadScene(2);
         }
         
     }
@@ -75,7 +76,7 @@ public class StarshipController : MonoBehaviour
             Destroy(gameObject);
             // Loads second scene (after Main Menu)
             StartCoroutine(WaitCoroutine());
-            Application.LoadLevel(2);
+            SceneManager.LoadScene(2);
         }
 
     }

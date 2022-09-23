@@ -7,6 +7,8 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using UnityEngine.SceneManagement;
+using System.Collections.Specialized;
+using CodeMonkey.Utils;
 
 public class StarshipController : MonoBehaviour
 {
@@ -19,8 +21,13 @@ public class StarshipController : MonoBehaviour
     public float velocityX;
     public float velocityY;
 
+    private GameObject LandingDock;
+    private GameObject Pointer;
+    private Vector3 tgtPos;
+    private RectTransform pointerRectTransform;
+
     //public GameObject starship;
-    
+
     bool thrust = false;
 
     Rigidbody2D rb;
@@ -28,15 +35,26 @@ public class StarshipController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        LandingDock = GameObject.Find("Landing Dock");
+        pointerRectTransform = GameObject.Find("Pointer").GetComponent<RectTransform>();
     }
 
     void Start(){
         rb.velocity = new Vector2(500, -500);
+
+        tgtPos = new Vector3(LandingDock.transform.position.x, LandingDock.transform.position.y); 
     }
 
     // Update is called once per frame
     private void Update()
     {
+        Vector3 tgt = tgtPos;
+        Vector3 origin = new Vector3(transform.position.x, transform.position.x);
+        Vector3 dir = (tgt - origin).normalized;
+        print(dir);
+        float angle = UtilsClass.GetAngleFromVectorFloat(dir);
+        print(angle);
+        pointerRectTransform.localEulerAngles = new Vector3(0, 0, 180+angle);
 
         float tilt = -Input.GetAxis("Horizontal");
         thrust = Input.GetKey(KeyCode.Space);

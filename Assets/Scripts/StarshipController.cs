@@ -17,6 +17,11 @@ public class StarshipController : MonoBehaviour
     [SerializeField] float tiltingForce = 80f;
     [SerializeField] public int gas = 1500;
     [SerializeField] public int electricity = 10000;
+    private float gasFloat;
+    private float eleFloat;
+
+    public Slider fuelSlider;
+    public Slider electricitySlider;
 
     public float velocityX;
     public float velocityY;
@@ -42,8 +47,11 @@ public class StarshipController : MonoBehaviour
     void Start(){
         rb.velocity = new Vector2(500, -500);
 
-        tgtPos = new Vector3(LandingDock.transform.position.x, LandingDock.transform.position.y); 
-    }
+        tgtPos = new Vector3(LandingDock.transform.position.x, LandingDock.transform.position.y);
+
+        fuelSlider.value = gas;
+        electricitySlider.value = electricity;
+}
 
     // Update is called once per frame
     private void Update()
@@ -51,9 +59,7 @@ public class StarshipController : MonoBehaviour
         Vector3 tgt = tgtPos;
         Vector3 origin = new Vector3(transform.position.x, transform.position.x);
         Vector3 dir = (tgt - origin).normalized;
-        print(dir);
         float angle = UtilsClass.GetAngleFromVectorFloat(dir);
-        print(angle);
         pointerRectTransform.localEulerAngles = new Vector3(0, 0, 180+angle);
 
         float tilt = -Input.GetAxis("Horizontal");
@@ -63,11 +69,18 @@ public class StarshipController : MonoBehaviour
             rb.freezeRotation = true;
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + (new Vector3 (0f, 0f, tilt * tiltingForce * Time.deltaTime)));
             electricity -= 1;
+            
+            
+            eleFloat = ((float)electricity / 10000);
+            electricitySlider.value = eleFloat;
+
+            print(electricitySlider.value);
         }
 
         rb.freezeRotation = false;
 
         
+
         velocityX = rb.velocity.x;
         velocityY = rb.velocity.y;
 
@@ -85,6 +98,12 @@ public class StarshipController : MonoBehaviour
         if (thrust && gas > 0){
             rb.AddRelativeForce(Vector2.up * trhusterForce * Time.deltaTime);
             gas -= 1;
+
+            gasFloat = ((float)gas / 1500);
+
+            fuelSlider.value = gasFloat;
+            print(fuelSlider.value);
+
         }
     }
 

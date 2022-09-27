@@ -17,6 +17,8 @@ public class StarshipController : MonoBehaviour
     [SerializeField] float tiltingForce = 80f;
     [SerializeField] public int gas = 1500;
     [SerializeField] public int electricity = 10000;
+    [SerializeField] public int initialXVel = 500;
+    [SerializeField] public int initialYVel = -500;
     private float gasFloat;
     private float eleFloat;
 
@@ -45,7 +47,8 @@ public class StarshipController : MonoBehaviour
     }
 
     void Start(){
-        rb.velocity = new Vector2(500, -500);
+
+        rb.velocity = new Vector2(initialXVel, initialYVel);
 
         tgtPos = new Vector3(LandingDock.transform.position.x, LandingDock.transform.position.y);
 

@@ -22,6 +22,8 @@ public class StarshipController : MonoBehaviour
     private float gasFloat;
     private float eleFloat;
     public bool flying;
+    public bool reached = false;
+    public bool landed = false;
 
     public Slider fuelSlider;
     public Slider electricitySlider;
@@ -38,7 +40,7 @@ public class StarshipController : MonoBehaviour
 
     bool thrust = false;
 
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     Scene scene;
 
     void Awake()
@@ -78,6 +80,10 @@ public class StarshipController : MonoBehaviour
             eleFloat = ((float)electricity / 10000f);
             electricitySlider.value = eleFloat;
             
+        }
+
+        if (transform.position.y > 500){
+            reached = true;
         }
 
         rb.freezeRotation = false;
@@ -137,6 +143,8 @@ public class StarshipController : MonoBehaviour
         else if (col.gameObject.tag == "LandingDock" && Math.Abs(velocityY) < 10 && scene.name != "Tutorial")
         {
             SceneManager.LoadScene(4);
+        } else if (col.gameObject.tag == "LandingDock" && Math.Abs(velocityY) < 10 && scene.name == "Tutorial" && reached){
+            landed = true;
         }
 
     }

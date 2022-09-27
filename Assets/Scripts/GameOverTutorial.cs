@@ -4,20 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour
+public class GameOverTutorial : MonoBehaviour
 {
     public void PlayAgain()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 
-    public void MainMenu()
+    public void QuitGameAgain()
     {
-        SceneManager.LoadScene(0);
-    }
 
-    public void Quit()
-    {
         Application.Quit();
     }
 }

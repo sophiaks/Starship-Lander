@@ -226,7 +226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 519, y: -72}
+  m_AnchoredPosition: {x: 527, y: -72}
   m_SizeDelta: {x: 1232.9534, y: 231.1788}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &223622424
@@ -466,7 +466,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27, y: 279}
+  m_AnchoredPosition: {x: 27, y: 287}
   m_SizeDelta: {x: 1232.9534, y: 231.1788}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &779481883
@@ -496,13 +496,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 8
     m_MaxSize: 80
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sorry! You went over bounds and missed the landing zone.
+  m_Text: Sorry! You lost. We recommend you try again!
 --- !u!222 &779481884
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -728,7 +728,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -66, y: 289}
+  m_AnchoredPosition: {x: -123, y: 290}
   m_SizeDelta: {x: 142.3698, y: 63.096405}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1121393555
@@ -861,7 +861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -25, y: 2.8499756}
+  m_AnchoredPosition: {x: 0, y: 2.8499756}
   m_SizeDelta: {x: -880, y: -239.90002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1135721349
@@ -914,7 +914,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: -16.5}
+  m_AnchoredPosition: {x: -37, y: -16.5}
   m_SizeDelta: {x: -570.6418, y: 49.7559}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1345225663
@@ -961,8 +961,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1135721349}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+      - m_Target: {fileID: 1728247443}
+        m_TargetAssemblyTypeName: GameOverTutorial, Assembly-CSharp
         m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:
@@ -1095,6 +1095,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1728247442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1728247444}
+  - component: {fileID: 1728247443}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1728247443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728247442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d5bf0884299443d8bd997b5cb5d635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1728247444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728247442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1049.1738, y: 749.58685, z: -37.003998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1929199146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 510, y: -61}
+  m_AnchoredPosition: {x: 524, y: -61}
   m_SizeDelta: {x: 1232.9534, y: 231.1788}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1929199148

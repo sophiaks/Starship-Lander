@@ -262,7 +262,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: 'Main Menu
+
+'
 --- !u!222 &223622425
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -496,13 +498,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 8
     m_MaxSize: 80
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sorry! You went over bounds and missed the landing zone.
+  m_Text: Sorry! You touched a surface faster than expected!
 --- !u!222 &779481884
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -728,7 +730,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -66, y: 289}
+  m_AnchoredPosition: {x: -31, y: 237}
   m_SizeDelta: {x: 142.3698, y: 63.096405}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1121393555
@@ -861,7 +863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -25, y: 2.8499756}
+  m_AnchoredPosition: {x: -23, y: 2.8499756}
   m_SizeDelta: {x: -880, y: -239.90002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1135721349
@@ -914,7 +916,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: -16.5}
+  m_AnchoredPosition: {x: 52, y: -16.5}
   m_SizeDelta: {x: -570.6418, y: 49.7559}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1345225663
@@ -1130,7 +1132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 510, y: -61}
+  m_AnchoredPosition: {x: 88, y: -53}
   m_SizeDelta: {x: 1232.9534, y: 231.1788}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1929199148
@@ -1160,13 +1162,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 8
     m_MaxSize: 80
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: 'Main Menu
+
+'
 --- !u!222 &1929199149
 CanvasRenderer:
   m_ObjectHideFlags: 0

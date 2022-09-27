@@ -21,9 +21,6 @@ public class StarshipController : MonoBehaviour
     private float eleFloat;
     public bool flying;
 
-    public Animator rocketAnimator;
-    public CharacterController controller;
-
     public Slider fuelSlider;
     public Slider electricitySlider;
 

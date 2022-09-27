@@ -15,12 +15,14 @@ public class StarshipController : MonoBehaviour
 
     [SerializeField] float trhusterForce = 72000000f;
     [SerializeField] float tiltingForce = 80f;
-    [SerializeField] public int gas = 1500;
-    [SerializeField] public int electricity = 10000;
-    [SerializeField] public int initialXVel = 500;
-    [SerializeField] public int initialYVel = -500;
+    [SerializeField] public float gas = 3000f;
+    [SerializeField] public float electricity = 10000f;
     private float gasFloat;
     private float eleFloat;
+    public bool flying;
+
+    public Animator rocketAnimator;
+    public CharacterController controller;
 
     public Slider fuelSlider;
     public Slider electricitySlider;
@@ -47,13 +49,12 @@ public class StarshipController : MonoBehaviour
     }
 
     void Start(){
-
-        rb.velocity = new Vector2(initialXVel, initialYVel);
+        rb.velocity = new Vector2(500, -500);
 
         tgtPos = new Vector3(LandingDock.transform.position.x, LandingDock.transform.position.y);
 
-        fuelSlider.value = gas;
-        electricitySlider.value = electricity;
+        fuelSlider.value = (float)gas/2000f;
+        electricitySlider.value = (float)electricity /10000f;
 }
 
     // Update is called once per frame
@@ -63,26 +64,23 @@ public class StarshipController : MonoBehaviour
         Vector3 origin = new Vector3(transform.position.x, transform.position.x);
         Vector3 dir = (tgt - origin).normalized;
         float angle = UtilsClass.GetAngleFromVectorFloat(dir);
-        pointerRectTransform.localEulerAngles = new Vector3(0, 0, 180+angle);
+        pointerRectTransform.localEulerAngles = new Vector3(0, 0, -angle);
 
         float tilt = -Input.GetAxis("Horizontal");
         thrust = Input.GetKey(KeyCode.Space);
+
 
         if(!Mathf.Approximately(tilt, 0f) && electricity > 0){
             rb.freezeRotation = true;
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + (new Vector3 (0f, 0f, tilt * tiltingForce * Time.deltaTime)));
             electricity -= 1;
             
-            
-            eleFloat = ((float)electricity / 10000);
+            eleFloat = ((float)electricity / 10000f);
             electricitySlider.value = eleFloat;
-
-            print(electricitySlider.value);
+            
         }
 
         rb.freezeRotation = false;
-
-        
 
         velocityX = rb.velocity.x;
         velocityY = rb.velocity.y;
@@ -99,26 +97,38 @@ public class StarshipController : MonoBehaviour
     private void FixedUpdate()
     {
         if (thrust && gas > 0){
+            flying = true;
+            //rocketAnimator.setFloat("pressingSpace", true);
             rb.AddRelativeForce(Vector2.up * trhusterForce * Time.deltaTime);
             gas -= 1;
 
-            gasFloat = ((float)gas / 1500);
+            gasFloat = ((float)gas / 2000f);
 
             fuelSlider.value = gasFloat;
-            print(fuelSlider.value);
-
+        }
+        else
+        {
+            //rocketAnimator.setFloat("pressingSpace", false);
+            flying = false;
         }
     }
 
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        
         if (Math.Abs(velocityY) > 10)
         {
             Destroy(gameObject);
             // Loads second scene (after Main Menu)
             StartCoroutine(WaitCoroutine());
             SceneManager.LoadScene(2);
+        }
+       
+
+        else if (col.gameObject.tag == "LandingDock" && Math.Abs(velocityY) < 10)
+        {
+            SceneManager.LoadScene(3);
         }
 
     }

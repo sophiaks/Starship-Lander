@@ -17,6 +17,8 @@ public class StarshipController : MonoBehaviour
     [SerializeField] float tiltingForce = 80f;
     [SerializeField] public float gas = 3000f;
     [SerializeField] public float electricity = 10000f;
+    [SerializeField] public int velXInit = 500;
+    [SerializeField] public int velYInit = -500;
     private float gasFloat;
     private float eleFloat;
     public bool flying;
@@ -37,6 +39,7 @@ public class StarshipController : MonoBehaviour
     bool thrust = false;
 
     Rigidbody2D rb;
+    Scene scene;
 
     void Awake()
     {
@@ -46,7 +49,7 @@ public class StarshipController : MonoBehaviour
     }
 
     void Start(){
-        rb.velocity = new Vector2(500, -500);
+        rb.velocity = new Vector2(velXInit, velYInit);
 
         tgtPos = new Vector3(LandingDock.transform.position.x, LandingDock.transform.position.y);
 
@@ -82,11 +85,15 @@ public class StarshipController : MonoBehaviour
         velocityX = rb.velocity.x;
         velocityY = rb.velocity.y;
 
-        if (transform.position.x < -6100 || transform.position.x > 6100){
+        if (transform.position.x < -6100 || transform.position.x > 6100 || transform.position.y > 10000){
+            scene = SceneManager.GetActiveScene();
             Destroy(gameObject);
             // Loads second scene (after Main Menu)
             StartCoroutine(WaitCoroutine());
-            SceneManager.LoadScene(2);
+            if (scene.name == "Tutorial"){
+                SceneManager.LoadScene(6);
+            }else{
+            SceneManager.LoadScene(2);}
         }
         
     }
@@ -113,19 +120,23 @@ public class StarshipController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        scene = SceneManager.GetActiveScene();
         
         if (Math.Abs(velocityY) > 10)
         {
             Destroy(gameObject);
-            // Loads second scene (after Main Menu)
+
             StartCoroutine(WaitCoroutine());
-            SceneManager.LoadScene(2);
+            if (scene.name == "Tutorial"){
+                SceneManager.LoadScene(6);
+            }else{
+            SceneManager.LoadScene(5);}
         }
        
 
-        else if (col.gameObject.tag == "LandingDock" && Math.Abs(velocityY) < 10)
+        else if (col.gameObject.tag == "LandingDock" && Math.Abs(velocityY) < 10 && scene.name != "Tutorial")
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
         }
 
     }

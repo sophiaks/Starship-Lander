@@ -11,10 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Scenes/GameOver.unity
-    guid: 856d2d82dac194d6db04a60dcc91e482
   - enabled: 1
     path: Assets/Scenes/GameOver Bounds.unity
     guid: 401c5efbb485fb54ab08e973676f56ed
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: be20b9c1d5fa74662b0a5bc6b4b85634
+  - enabled: 1
+    path: Assets/Scenes/WINWINWIN.unity
+    guid: f60b8deaf269faf43ae28c937dbee910
+  - enabled: 1
+    path: Assets/Scenes/GameOver Explosion.unity
+    guid: 5b4f872f99b4d4188998f2f0d5b6b1cb
+  - enabled: 1
+    path: Assets/Scenes/GameOver Tutorial.unity
+    guid: 837b41075833e4e97a53ddcde71c0354
   m_configObjects: {}

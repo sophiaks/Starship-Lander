@@ -8773,7 +8773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3079030089458271411, guid: 5d88bd7105c3449539ac39b9d4a5ea1e, type: 3}
       propertyPath: tiltingForce
-      value: 80
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3079030089458271411, guid: 5d88bd7105c3449539ac39b9d4a5ea1e, type: 3}
       propertyPath: trhusterForce
@@ -8821,11 +8821,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3079030089458271413, guid: 5d88bd7105c3449539ac39b9d4a5ea1e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5031
+      value: -3910
       objectReference: {fileID: 0}
     - target: {fileID: 3079030089458271413, guid: 5d88bd7105c3449539ac39b9d4a5ea1e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5100
+      value: 8474
       objectReference: {fileID: 0}
     - target: {fileID: 3079030089458271413, guid: 5d88bd7105c3449539ac39b9d4a5ea1e, type: 3}
       propertyPath: m_LocalPosition.z

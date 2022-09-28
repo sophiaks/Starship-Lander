@@ -19,6 +19,9 @@ public class StarshipController : MonoBehaviour
     [SerializeField] public float electricity = 10000f;
     [SerializeField] public int velXInit = 500;
     [SerializeField] public int velYInit = -500;
+
+    public AudioSource audioSource;
+
     private float gasFloat;
     private float eleFloat;
     public bool flying;
@@ -36,7 +39,6 @@ public class StarshipController : MonoBehaviour
     private Vector3 tgtPos;
     private RectTransform pointerRectTransform;
 
-    //public GameObject starship;
 
     bool thrust = false;
 
@@ -86,6 +88,17 @@ public class StarshipController : MonoBehaviour
             reached = true;
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            print("Playing audio");
+            audioSource.Play();
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            print("Stopping audio");
+            audioSource.Stop();
+        }
+
         rb.freezeRotation = false;
 
         velocityX = rb.velocity.x;
@@ -96,10 +109,12 @@ public class StarshipController : MonoBehaviour
             Destroy(gameObject);
             // Loads second scene (after Main Menu)
             StartCoroutine(WaitCoroutine());
-            if (scene.name == "Tutorial"){
+            if (scene.name == "Tutorial") {
                 SceneManager.LoadScene(6);
-            }else{
-            SceneManager.LoadScene(2);}
+            }
+            else {
+                SceneManager.LoadScene(2);
+                }
         }
         
     }
@@ -108,7 +123,6 @@ public class StarshipController : MonoBehaviour
     {
         if (thrust && gas > 0){
             flying = true;
-            //rocketAnimator.setFloat("pressingSpace", true);
             rb.AddRelativeForce(Vector2.up * trhusterForce * Time.deltaTime);
             gas -= 1;
 
@@ -118,7 +132,6 @@ public class StarshipController : MonoBehaviour
         }
         else
         {
-            //rocketAnimator.setFloat("pressingSpace", false);
             flying = false;
         }
     }

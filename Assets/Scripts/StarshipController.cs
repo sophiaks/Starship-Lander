@@ -12,6 +12,7 @@ using CodeMonkey.Utils;
 
 public class StarshipController : MonoBehaviour
 {
+    public Animator animator;
 
     [SerializeField] float trhusterForce = 72000000f;
     [SerializeField] float tiltingForce = 80f;
@@ -73,7 +74,6 @@ public class StarshipController : MonoBehaviour
         float tilt = -Input.GetAxis("Horizontal");
         thrust = Input.GetKey(KeyCode.Space);
 
-
         if(!Mathf.Approximately(tilt, 0f) && electricity > 0){
             rb.freezeRotation = true;
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + (new Vector3 (0f, 0f, tilt * tiltingForce * Time.deltaTime)));
@@ -90,13 +90,12 @@ public class StarshipController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            print("Playing audio");
             audioSource.Play();
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            print("Stopping audio");
             audioSource.Stop();
+            
         }
 
         rb.freezeRotation = false;
@@ -123,6 +122,7 @@ public class StarshipController : MonoBehaviour
     {
         if (thrust && gas > 0){
             flying = true;
+            animator.SetBool("thrust", true);
             rb.AddRelativeForce(Vector2.up * trhusterForce * Time.deltaTime);
             gas -= 1;
 
@@ -133,6 +133,7 @@ public class StarshipController : MonoBehaviour
         else
         {
             flying = false;
+            animator.SetBool("thrust", false);
         }
     }
 

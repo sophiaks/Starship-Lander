@@ -49,10 +49,14 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Q) && isPaused) {
+            Application.Quit();
+        }
+            if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!isPaused) {
                 pause();
+                
             }
             else { 
                 resume(); 

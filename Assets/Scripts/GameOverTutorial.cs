@@ -14,6 +14,6 @@ public class GameOverTutorial : MonoBehaviour
     public void QuitGameAgain()
     {
 
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 }

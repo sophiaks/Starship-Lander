@@ -436,8 +436,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1999594663}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+      - m_Target: {fileID: 1728247443}
+        m_TargetAssemblyTypeName: GameOverTutorial, Assembly-CSharp
         m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:
@@ -754,9 +754,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1999594663}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
-        m_MethodName: MainMenu
+      - m_Target: {fileID: 1728247443}
+        m_TargetAssemblyTypeName: GameOverTutorial, Assembly-CSharp
+        m_MethodName: QuitGameAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1216,6 +1216,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1999594661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61c907daea6714ab8a3befe25698ff18, type: 3}
+  m_Script: {fileID: 11500000, guid: d8d5bf0884299443d8bd997b5cb5d635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

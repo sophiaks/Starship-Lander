@@ -8599,7 +8599,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 11.84, y: 11.84}
+    oldSize: {x: 0.65, y: 1.62}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -8607,39 +8607,28 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.54, y: -5.72}
-      - {x: -0.42999998, y: -5.92}
-      - {x: 0.32, y: -5.92}
-      - {x: 1.11, y: -5.5699997}
-      - {x: 1.13, y: -5.5499997}
-      - {x: 1.87, y: -5.23}
-      - {x: 3.22, y: -5.92}
-      - {x: 3.72, y: -5.92}
-      - {x: 3.72, y: -2}
-      - {x: 2.73, y: -0.98999995}
-      - {x: 2.23, y: -0.34}
-      - {x: 1.87, y: -0.35}
-      - {x: 1.87, y: 1.48}
-      - {x: 1.8499999, y: 1.5}
-      - {x: 1.5, y: 2.96}
-      - {x: 1.48, y: 2.98}
-      - {x: 1.13, y: 4.0699997}
-      - {x: 1.11, y: 4.0899997}
-      - {x: 0.76, y: 4.81}
-      - {x: 0.74, y: 4.83}
-      - {x: 0.39, y: 5.5499997}
-      - {x: 0.42999998, y: 5.71}
-      - {x: 0.03, y: 5.92}
-      - {x: -0.65, y: 5.92}
-      - {x: -1.65, y: 4.14}
-      - {x: -2.6699998, y: -0.35}
-      - {x: -2.98, y: -1.11}
-      - {x: -4.0899997, y: -2.1499999}
-      - {x: -4.0899997, y: -5.92}
-      - {x: -3.6699998, y: -5.92}
-      - {x: -2.96, y: -5.5699997}
-      - {x: -2.9399998, y: -5.5499997}
-      - {x: -2.57, y: -5.23}
+    - - {x: 0.044999998, y: -0.38}
+      - {x: 0.105, y: -0.34}
+      - {x: 0.225, y: -0.38}
+      - {x: 0.285, y: -0.38}
+      - {x: 0.305, y: -0.35999998}
+      - {x: 0.305, y: -0.04}
+      - {x: 0.295, y: -0.02}
+      - {x: 0.195, y: 0.11}
+      - {x: 0.175, y: 0.28}
+      - {x: 0.125, y: 0.5}
+      - {x: 0.074999996, y: 0.62}
+      - {x: 0.044999998, y: 0.65999997}
+      - {x: -0.024999999, y: 0.65999997}
+      - {x: -0.074999996, y: 0.63}
+      - {x: -0.16499999, y: 0.28}
+      - {x: -0.295, y: -0.02}
+      - {x: -0.295, y: -0.35999998}
+      - {x: -0.275, y: -0.38}
+      - {x: -0.225, y: -0.38}
+      - {x: -0.145, y: -0.31}
+      - {x: -0.105, y: -0.34}
+      - {x: -0.005, y: -0.38}
 --- !u!95 &1962421558
 Animator:
   serializedVersion: 4
@@ -8650,7 +8639,7 @@ Animator:
   m_GameObject: {fileID: 1962421556}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1d0245c1deb13c24d823603040509387, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9b231eeb24cb1e642a2fd8e4b8c821c4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9653,6 +9642,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3079030089458271411, guid: 5d88bd7105c3449539ac39b9d4a5ea1e, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1962421558}
+    - target: {fileID: 3079030089458271411, guid: 5d88bd7105c3449539ac39b9d4a5ea1e, type: 3}
       propertyPath: velXInit
       value: 0
       objectReference: {fileID: 0}
@@ -9710,11 +9703,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3079030089458271413, guid: 5d88bd7105c3449539ac39b9d4a5ea1e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3079030089458271413, guid: 5d88bd7105c3449539ac39b9d4a5ea1e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3079030089458271413, guid: 5d88bd7105c3449539ac39b9d4a5ea1e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3079030089458271413, guid: 5d88bd7105c3449539ac39b9d4a5ea1e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9722,7 +9719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3079030089458271413, guid: 5d88bd7105c3449539ac39b9d4a5ea1e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 480
+      value: 470
       objectReference: {fileID: 0}
     - target: {fileID: 3079030089458271413, guid: 5d88bd7105c3449539ac39b9d4a5ea1e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9758,7 +9755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3079030089458271413, guid: 5d88bd7105c3449539ac39b9d4a5ea1e, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d88bd7105c3449539ac39b9d4a5ea1e, type: 3}

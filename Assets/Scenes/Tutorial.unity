@@ -1854,7 +1854,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Notice that when tilting, the rocket uses electricity.  When firing its
-    engine, the rocket uses gas. Both can be seen at the left of the creen. Do not
+    engine, the rocket uses gas. Both can be seen at the left of the screen. Do not
     let it end! (Press Enter to continue)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

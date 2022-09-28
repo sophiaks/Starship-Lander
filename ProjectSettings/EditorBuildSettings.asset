@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: be20b9c1d5fa74662b0a5bc6b4b85634
   - enabled: 1
-    path: Assets/Scenes/WINWINWIN.unity
+    path: Assets/Scenes/WinScene.unity
     guid: f60b8deaf269faf43ae28c937dbee910
   - enabled: 1
     path: Assets/Scenes/GameOver Explosion.unity

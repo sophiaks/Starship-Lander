@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3079030089458271410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -60, y: 30, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,8 +100,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trhusterForce: 10
   tiltingForce: 10
+  gas: 3000
+  electricity: 10000
+  velXInit: 500
+  velYInit: -500
+  audioSource: {fileID: 0}
+  flying: 0
+  reached: 0
+  landed: 0
+  fuelSlider: {fileID: 0}
+  electricitySlider: {fileID: 0}
   velocityX: 0
   velocityY: 0
+  rb: {fileID: 0}
 --- !u!50 &950898731837780711
 Rigidbody2D:
   serializedVersion: 4
